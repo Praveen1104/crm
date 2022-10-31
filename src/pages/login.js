@@ -5,13 +5,13 @@ import {useNavigate} from 'react-router-dom';
 
 function Login(){
     const [showsignup, setsignup] = useState(false);
-    const [userType, setusertype] = useState("CUSTOMER");
+    const [userTypes, setusertype] = useState("CUSTOMER");
     const [userId, setuserid] = useState("");
     const [password, setpassword] = useState("");
     const [username,setusername]=useState("");
     const [email,setemail]=useState("");
     const [message,setmessage]=useState("");
-        console.log(userType)
+        console.log(userTypes)
     const navigate=useNavigate();
     const updatesignupdata=(e)=>{
         if(e.target.id === "userid"){
@@ -40,7 +40,7 @@ function Login(){
             userId:userId,
             password:password,
             name:username,
-            userTypes:userType,
+            userType:userTypes,
             email:email
 
         }
@@ -111,7 +111,7 @@ function Login(){
                       <span className='my-1'>User Type</span>
                         <DropdownButton 
                         align="end"
-                        title={userType}
+                        title={userTypes}
                         id="userType"
                         variant='light'
                         onSelect={handleselect}>
